@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
   $("#money").hover(function() {
-		$(this).attr("src","money-hover.png");
+		$(this).attr("src","http://i.imgur.com/fnfNbeL.png");
   }, function() {
-		$(this).attr("src","money.png");
+		$(this).attr("src","http://i.imgur.com/sl6agsU.png");
   });
 
   var questions = [
@@ -40,41 +40,41 @@ $(document).ready(function(){
 
     if (currentQuestion == 1) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "toilet.png")
+        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
     }
 
     if (currentQuestion == 2) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "toilet.png")
+        $("#lucille").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "farmer.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
@@ -82,20 +82,20 @@ $(document).ready(function(){
 
     if (currentQuestion == 3) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "toilet.png")
+        $("#jack").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "farmer.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
@@ -103,62 +103,62 @@ $(document).ready(function(){
 
     if (currentQuestion == 4) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "toilet.png")
+        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
     }
 
     if (currentQuestion == 5) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "toilet.png")
+        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
     }
 
     if (currentQuestion == 6) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "toilet.png")
+        $("#cartman").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "farmer.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
@@ -166,20 +166,20 @@ $(document).ready(function(){
 
     if (currentQuestion == 7) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "toilet.png")
+        $("#cartman").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "farmer.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
@@ -187,20 +187,20 @@ $(document).ready(function(){
 
     if (currentQuestion == 8) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "toilet.png")
+        $("#lucille").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "farmer.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
@@ -208,20 +208,20 @@ $(document).ready(function(){
 
     if (currentQuestion == 9) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "toilet.png")
+        $("#jack").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "farmer.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
@@ -229,41 +229,41 @@ $(document).ready(function(){
 
     if (currentQuestion == 10) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "toilet.png")
+        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
     }
 
     if (currentQuestion == 11) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "toilet.png")
+        $("#jack").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "farmer.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
@@ -271,20 +271,20 @@ $(document).ready(function(){
 
     if (currentQuestion == 12) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "toilet.png")
+        $("#cartman").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "farmer.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
@@ -292,20 +292,20 @@ $(document).ready(function(){
 
     if (currentQuestion == 13) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "toilet.png")
+        $("#cartman").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "farmer.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
@@ -313,20 +313,20 @@ $(document).ready(function(){
 
     if (currentQuestion == 14) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "toilet.png")
+        $("#jack").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "farmer.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
@@ -334,62 +334,62 @@ $(document).ready(function(){
 
     if (currentQuestion == 15) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "toilet.png")
+        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
     }
 
     if (currentQuestion == 16) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "toilet.png")
+        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
     }
 
     if (currentQuestion == 17) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "toilet.png")
+        $("#lucille").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "farmer.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
@@ -397,35 +397,35 @@ $(document).ready(function(){
 
     if (currentQuestion == 18) {
       $("#jack").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }));
       $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "farmer.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "farmer.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
         incorrect ++;
         console.log(incorrect, "incorrect")
       }))
       $("#donald").on("click", (function(){
-        $("#donald").attr("src", "toilet.png")
+        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
       }))
     }
 
     if (currentQuestion == 18) {
       $("#money").on("click", (function(){
-        $("#jack").attr("src", "farmer.png")
-        $("#lucille").attr("src", "farmer.png")
-        $("#cartman").attr("src", "farmer.png")
-        $("#donald").attr("src", "farmer.png")
+        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
+        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
+        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
+        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
         $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
         $("#money").attr("src", "cow.png")
         $("#money").hover(function() {
-          $(this).attr("src","cow.png");
+          $(this).attr("src","http://i.imgur.com/s9HgCR0.png");
         });
       }))
     }
@@ -435,10 +435,10 @@ $(document).ready(function(){
 $("#money").on("click", nextQuestion);
 
 $("#money").on("click", (function(){
-  $("#jack").attr("src", "jack.png");
-  $("#lucille").attr("src", "lucille.png");
-  $("#cartman").attr("src", "cartman.png");
-  $("#donald").attr("src", "donald.png");
+  $("#jack").attr("src", "http://i.imgur.com/zK6isje.png");
+  $("#lucille").attr("src", "http://i.imgur.com/EByuseZ.png");
+  $("#cartman").attr("src", "http://i.imgur.com/EvV1B0C.png");
+  $("#donald").attr("src", "http://i.imgur.com/5v8dM2K.png");
 }));
 
 var topics = [

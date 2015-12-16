@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
   $("#money").hover(function() {
-		$(this).attr("src","http://i.imgur.com/fnfNbeL.png");
+		$(this).attr("src","money-hover.png");
   }, function() {
-		$(this).attr("src","http://i.imgur.com/sl6agsU.png");
+		$(this).attr("src","money.png");
   });
 
   var questions = [
@@ -425,7 +425,7 @@ $(document).ready(function(){
         $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
         $("#money").attr("src", "cow.png")
         $("#money").hover(function() {
-          $(this).attr("src","http://i.imgur.com/s9HgCR0.png");
+          $(this).attr("src","cow.png");
         });
       }))
     }
@@ -435,10 +435,10 @@ $(document).ready(function(){
 $("#money").on("click", nextQuestion);
 
 $("#money").on("click", (function(){
-  $("#jack").attr("src", "http://i.imgur.com/zK6isje.png");
-  $("#lucille").attr("src", "http://i.imgur.com/EByuseZ.png");
-  $("#cartman").attr("src", "http://i.imgur.com/EvV1B0C.png");
-  $("#donald").attr("src", "http://i.imgur.com/5v8dM2K.png");
+  $("#jack").attr("src", "jack.png");
+  $("#lucille").attr("src", "lucille.png");
+  $("#cartman").attr("src", "cartman.png");
+  $("#donald").attr("src", "donald.png");
 }));
 
 var topics = [

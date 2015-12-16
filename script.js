@@ -1,474 +1,101 @@
 $(document).ready(function(){
 
-  $("#money").hover(function() {
-		$(this).attr("src","money-hover.png");
-  }, function() {
-		$(this).attr("src","money.png");
+  var questions = [
+      { title: "(1/18) 'It's freezing and snowing in New York. We need global warming!'", order: 1, candidateID: "#donald" },
+      { title: "(2/18) 'They didn't sneak into this country to be your friends.'", order: 2, candidateID: "#lucille" },
+      { title: "(3/18) 'I don't have friends at NASA. Bunch of nerds.'", order: 3, candidateID: "#jack" },
+      { title: "(4/18) 'Black guys counting my money! I hate it. The only kind of people I want counting my money are little short guys that wear yarmulkes every day.'", order: 4, candidateID: "#donald" },
+      { title: "(5/18) 'I have a great relationship with the blacks.'", order: 5, candidateID: "#donald" },
+      { title: "(6/18) 'They're building a wall to separate the US from the immigrants, which was my idea!'", order: 6, candidateID: "#cartman" },
+      { title: "(7/18) 'Dolphins, eskimos, who cares?'", order: 7, candidateID: "#cartman" },
+      { title: "(8/18) 'If you're worried about criticism, sometimes a diet is the best defense.'", order: 8, candidateID: "#lucille" },
+      { title: "(9/18) 'I like when a woman has ambition. It's like seeing a dog wearing clothes.'", order: 9, candidateID: "#jack" },
+      { title: "(10/18) 'My fingers are long and beautiful, as it has been very well documented, are various other parts of my body.'", order: 10, candidateID: "#donald" },
+      { title: "(11/18) 'Money can't buy happiness. It is happiness.'", order: 11, candidateID: "#jack" },
+      { title: "(12/18) 'They're everywhere. They want to save the earth, but all they do is smoke pot and smell bad.'", order: 12, candidateID: "#cartman" },
+      { title: "(13/18) 'They had to put their cardboard box up for a second mortgage.'", order: 13, candidateID: "#cartman" },
+      { title: "(14/18) 'The woman is on vacation with her husband as we speak. Probably having beach sex. Which is the third best sex after elevator and White House.'", order: 14, candidateID: "#jack" },
+      { title: "(15/18) 'My IQ is one of the highest—and you all know it! Please don’t feel so stupid or insecure, it’s not your fault.'", order: 15, candidateID: "#donald" },
+      { title: "(16/18) 'The concept of global warming was created by and for the Chinese'", order: 16, candidateID: "#donald" },
+      { title: "(17/18) 'If that's a veiled criticism about me, I don't hear it and I won't respond to it.'", order: 17, candidateID: "#lucille" },
+      { title: "(18/18) 'Ladies and gentlemen, I am officially running for president of the United States.'", order: 18, candidateID: "#donald" },
+    ];
+  var currentQuestionIndex = 0,
+  currentQuestion = questions[0]
+  incorrect = 0,
+  correct = 0,
+  incorrectImgSrc = "http://i.imgur.com/jIiAzBG.png",
+  correctImgSrc = "http://i.imgur.com/7EJJG4N.png",
+  candidates = [
+      { id: "#jack", imgSrc: "http://i.imgur.com/zK6isje.png" },
+      { id: "#lucille", imgSrc: "http://i.imgur.com/EByuseZ.png" },
+      { id: "#cartman", imgSrc: "http://i.imgur.com/EvV1B0C.png" },
+      { id: "#donald", imgSrc: "http://i.imgur.com/5v8dM2K.png" },
+  ],
+  topics = [
+      "ON CLIMATE CHANGE:",
+      "ON IMMIGRATION:",
+      "ON CLIMATE CHANGE:",
+      "ON FINANCE:",
+      "ON RACE RELTIONS:",
+      "ON IMMIGRATION:",
+      "ON CLIMATE CHANGE:",
+      "ON IMAGE:",
+      "ON GENDER EQUALITY:",
+      "ON IMAGE:",
+      "ON FINANCE:",
+      "ON LIBERALS:",
+      "ON FINANCE:",
+      "ON THE WHITE HOUSE:",
+      "ON IMMIGRATION:",
+      "ON CLIMATE CHANGE:",
+      "ON IMAGE:",
+      "ON THE WHITE HOUSE:"
+  ],
+  currentTopicIndex = 0;
+
+  var nextQuestion = function(e) {
+    currentQuestionIndex += 1
+    $(".questionStyle").text(currentQuestion.title);
+    currentQuestion = questions[currentQuestionIndex];
+  },
+  resetCandidates = function() {
+    for (var i=0; i < candidates.length; i++) {
+      $(candidates[i].id).attr("src", candidates[i].imgSrc);
+    }
+  },
+  nextTopic = function() {
+    if (currentTopicIndex == topics.length - 1) {
+      topics.push("OOF. YOU HAD " + incorrect + " INCORRECT GUESSES.");
+      questions.push({ title: "You're a total farmer. I wanted to help; I really did. I called the concierge service with my American Express Invisible Card– there are no rental cars. The trains and buses are sold out. You're never leaving the farm."});
+    } else if (currentTopicIndex == 17 ) {
+      $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
+
+    } else {
+      currentTopicIndex += 1;
+      currentTopic = topics[currentQuestionIndex];
+      $(".topicStyle").text(currentTopic);
+    }
+  };
+
+  $("body").on("click", '.candidate', function(e) {
+    var candidateID = e.target.id,
+    selectedCandidate = e.target;
+    if (currentQuestion.candidateID == "#" + candidateID) {
+      $(selectedCandidate).attr("src", correctImgSrc)
+    } else {
+      $(selectedCandidate).attr("src", incorrectImgSrc);
+      incorrect += 1;
+    }
   });
 
-  var questions = [
-    "(1/18) “It's freezing and snowing in New York. We need global warming!”",
-    "(2/18) “They didn't sneak into this country to be your friends.”",
-    "(3/18) “I don't have friends at NASA. Bunch of nerds.”",
-    "(4/18) “Black guys counting my money! I hate it. The only kind of people I want counting my money are little short guys that wear yarmulkes every day.”",
-    "(5/18) “I have a great relationship with the blacks.”",
-    "(6/18) “They're building a wall to separate the US from the immigrants, which was my idea!”",
-    "(7/18) “Dolphins, eskimos, who cares?”",
-    "(8/18) “If you're worried about criticism, sometimes a diet is the best defense.”",
-    "(9/18) “I like when a woman has ambition. It's like seeing a dog wearing clothes.”",
-    "(10/18) “My fingers are long and beautiful, as it has been very well documented, are various other parts of my body.”",
-    "(11/18) “Money can't buy happiness. It is happiness.”",
-    "(12/18) “They're everywhere. They want to save the earth, but all they do is smoke pot and smell bad.”",
-    "(13/18) “They had to put their cardboard box up for a second mortgage.”",
-    "(14/18) “The woman is on vacation with her husband as we speak. Probably having beach sex. Which is the third best sex after elevator and White House.”",
-    "(15/18) “My IQ is one of the highest—and you all know it! Please don’t feel so stupid or insecure, it’s not your fault.”",
-    "(16/18) “The concept of global warming was created by and for the Chinese”",
-    "(17/18) “If that's a veiled criticism about me, I don't hear it and I won't respond to it.”",
-    "(18/18) “Ladies and gentlemen, I am officially running for president of the United States.”",
-    "You're a total farmer. I wanted to help; I really did. I called the concierge service with my American Express Invisible Card– there are no rental cars. The trains and buses are sold out. You're never leaving the farm."];
-  var currentQuestion = 0;
-  var incorrect = 0;
-  var correct = 0;
-  var nextQuestion = function ( event ) {
-    $(".questionStyle").text(questions[currentQuestion]);
-    currentQuestion += 1;
-    $("#jack").off("click")
-    $("#lucille").off("click")
-    $("#cartman").off("click")
-    $("#donald").off("click")
-
-
-    if (currentQuestion == 1) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-    }
-
-    if (currentQuestion == 2) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-    }
-
-    if (currentQuestion == 3) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-    }
-
-    if (currentQuestion == 4) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-    }
-
-    if (currentQuestion == 5) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-    }
-
-    if (currentQuestion == 6) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-    }
-
-    if (currentQuestion == 7) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-    }
-
-    if (currentQuestion == 8) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-    }
-
-    if (currentQuestion == 9) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-    }
-
-    if (currentQuestion == 10) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-    }
-
-    if (currentQuestion == 11) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-    }
-
-    if (currentQuestion == 12) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-    }
-
-    if (currentQuestion == 13) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-    }
-
-    if (currentQuestion == 14) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-    }
-
-    if (currentQuestion == 15) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-    }
-
-    if (currentQuestion == 16) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-    }
-
-    if (currentQuestion == 17) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-    }
-
-    if (currentQuestion == 18) {
-      $("#jack").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }));
-      $("#lucille").on("click", (function(){
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#cartman").on("click", (function(){
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        incorrect ++;
-        console.log(incorrect, "incorrect")
-      }))
-      $("#donald").on("click", (function(){
-        $("#donald").attr("src", "http://i.imgur.com/7EJJG4N.png")
-      }))
-    }
-
-    if (currentQuestion == 18) {
-      $("#money").on("click", (function(){
-        $("#jack").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        $("#lucille").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        $("#cartman").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        $("#donald").attr("src", "http://i.imgur.com/jIiAzBG.png")
-        $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
-        $("#money").attr("src", "cow.png")
-        $("#money").hover(function() {
-          $(this).attr("src","cow.png");
-        });
-      }))
-    }
-
-  }
-
-$("#money").on("click", nextQuestion);
-
-$("#money").on("click", (function(){
-  $("#jack").attr("src", "jack.png");
-  $("#lucille").attr("src", "lucille.png");
-  $("#cartman").attr("src", "cartman.png");
-  $("#donald").attr("src", "donald.png");
-}));
-
-var topics = [
-  "ON CLIMATE CHANGE:",
-  "ON IMMIGRATION:",
-  "ON CLIMATE CHANGE:",
-  "ON FINANCE:",
-  "ON RACE RELTIONS:",
-  "ON IMMIGRATION:",
-  "ON CLIMATE CHANGE:",
-  "ON IMAGE:",
-  "ON GENDER EQUALITY:",
-  "ON IMAGE:",
-  "ON FINANCE:",
-  "ON LIBERALS:",
-  "ON FINANCE:",
-  "ON THE WHITE HOUSE:",
-  "ON IMMIGRATION:",
-  "ON CLIMATE CHANGE:",
-  "ON IMAGE:",
-  "ON THE WHITE HOUSE:",]
-var currentTopic = 0;
-var nextTopic = function ( event ) {
-  if (currentTopic == 18) {
-    topics.push("OOF. YOU HAD " + incorrect + " INCORRECT GUESSES.")
-  };
-  $(".topicStyle").text(topics[currentTopic]);
-  currentTopic += 1;
-}
-
-$("#money").on("click", nextTopic)
-
+  $("body").on("click", "#money", function(e) {
+      nextTopic();
+      resetCandidates();
+      nextQuestion();
+    }).on("mouseenter", function() {
+      $(this).attr("src", "http://i.imgur.com/fnfNbeL.png");
+    }).on("mouseleave", function() {
+      $(this).attr("src", "http://i.imgur.com/sl6agsU.png");
+    });
 });

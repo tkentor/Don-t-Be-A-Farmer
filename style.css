@@ -43,7 +43,7 @@ html{
     height: 30px;
     letter-spacing: 1px;
     line-height: 30px;
-    position: relative;
+    position: absolute;
     text-align: center;
     text-transform: uppercase;
     top: -80px;
@@ -71,8 +71,15 @@ html{
     float:left;
     position:relative;
     cursor:pointer;
+    display:table-cell;
+    width:25%;
+    text-align: center;
     }
-
+    .info-line{
+      display:table;
+      white-space: nowrap;
+      width:100%;
+    }
     .info:hover span{
     display:block;
     }

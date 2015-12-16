@@ -70,7 +70,6 @@ $(document).ready(function(){
       questions.push({ title: "You're a total farmer. I wanted to help; I really did. I called the concierge service with my American Express Invisible Card– there are no rental cars. The trains and buses are sold out. You're never leaving the farm."});
     } else if (currentTopicIndex == 17 ) {
       $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
-
     } else {
       currentTopicIndex += 1;
       currentTopic = topics[currentQuestionIndex];

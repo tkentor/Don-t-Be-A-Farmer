@@ -83,7 +83,8 @@ $(document).ready(function(){
     if (currentTopicIndex == topics.length - 1) {
       topics.push("OOF. YOU HAD " + incorrect + " INCORRECT GUESSES.");
       questions.push({ title: "You're a total farmer. I wanted to help; I really did. I called the concierge service with my American Express Invisible Card– there are no rental cars. The trains and buses are sold out. You're never leaving the farm."});
-      $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
+      $("html").css("background", "url(http://i.imgur.com/zC9QhpX.jpg?1) no-repeat center center fixed");
+      $("#money-blank").attr("src", "http://i.imgur.com/s9HgCR0.png");
       currentTopicIndex += 1;
       currentQuestionIndex += 1;
       currentTopic = topics[currentQuestionIndex];

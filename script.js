@@ -1,8 +1,8 @@
 function swapImages() {
-  var $current = $(".money-swap input:visible");
+  var $current = $(".money input:visible");
   var $next = $current.next();
   if($next.length === 0) {
-    $next = $(".money-swap input:first");
+    $next = $(".money input:first");
   }
   $current.hide();
   $next.show();
@@ -13,25 +13,25 @@ $(document).ready(function(){
   setInterval('swapImages()', 600);
 
   var questions = [
-      { title: "", order: 0},
-      { title: "(1/18) 'It's freezing and snowing in New York. We need global warming!'", order: 1, candidateID: "#donald" },
-      { title: "(2/18) 'They didn't sneak into this country to be your friends.'", order: 2, candidateID: "#lucille" },
-      { title: "(3/18) 'I don't have friends at NASA. Bunch of nerds.'", order: 3, candidateID: "#jack" },
-      { title: "(4/18) 'Black guys counting my money! I hate it. The only kind of people I want counting my money are little short guys that wear yarmulkes every day.'", order: 4, candidateID: "#donald" },
-      { title: "(5/18) 'I have a great relationship with the blacks.'", order: 5, candidateID: "#donald" },
-      { title: "(6/18) 'They're building a wall to separate the US from the immigrants, which was my idea!'", order: 6, candidateID: "#cartman" },
-      { title: "(7/18) 'Dolphins, eskimos, who cares?'", order: 7, candidateID: "#cartman" },
-      { title: "(8/18) 'If you're worried about criticism, sometimes a diet is the best defense.'", order: 8, candidateID: "#lucille" },
-      { title: "(9/18) 'I like when a woman has ambition. It's like seeing a dog wearing clothes.'", order: 9, candidateID: "#jack" },
-      { title: "(10/18) 'My fingers are long and beautiful, as it has been very well documented, are various other parts of my body.'", order: 10, candidateID: "#donald" },
-      { title: "(11/18) 'Money can't buy happiness. It is happiness.'", order: 11, candidateID: "#jack" },
-      { title: "(12/18) 'They're everywhere. They want to save the earth, but all they do is smoke pot and smell bad.'", order: 12, candidateID: "#cartman" },
-      { title: "(13/18) 'They had to put their cardboard box up for a second mortgage.'", order: 13, candidateID: "#cartman" },
-      { title: "(14/18) 'The woman is on vacation with her husband as we speak. Probably having beach sex. Which is the third best sex after elevator and White House.'", order: 14, candidateID: "#jack" },
-      { title: "(15/18) 'My IQ is one of the highest—and you all know it! Please don’t feel so stupid or insecure, it’s not your fault.'", order: 15, candidateID: "#donald" },
-      { title: "(16/18) 'The concept of global warming was created by and for the Chinese'", order: 16, candidateID: "#donald" },
-      { title: "(17/18) 'If that's a veiled criticism about me, I don't hear it and I won't respond to it.'", order: 17, candidateID: "#lucille" },
-      { title: "(18/18) 'Ladies and gentlemen, I am officially running for president of the United States.'", order: 18, candidateID: "#donald" },
+      { title: "Select the wordsmith behind each quote. Was it Donaghy, Lucille, Cartman, or Trump? Reveal a golden toilet and you're smart enough to be president. Otherwise, brush up, simpleton... what are you, a farmer? Hover your mouse over a character's name to learn more, or hit the money to begin.", order: 0 },
+      { title: "(1/18) \"It's freezing and snowing in New York. We need global warming!\"", order: 1, candidateID: "#donald" },
+      { title: "(2/18) \"They didn't sneak into this country to be your friends.\"", order: 2, candidateID: "#lucille" },
+      { title: "(3/18) \"I don't have friends at NASA. Bunch of nerds.\"", order: 3, candidateID: "#jack" },
+      { title: "(4/18) \"Black guys counting my money! I hate it. The only kind of people I want counting my money are little short guys that wear yarmulkes every day.\"", order: 4, candidateID: "#donald" },
+      { title: "(5/18) \"I have a great relationship with the blacks.\"", order: 5, candidateID: "#donald" },
+      { title: "(6/18) \"They're building a wall to separate the US from the immigrants, which was my idea!\"", order: 6, candidateID: "#cartman" },
+      { title: "(7/18) \"Dolphins, eskimos, who cares?\"", order: 7, candidateID: "#cartman" },
+      { title: "(8/18) \"If you're worried about criticism, sometimes a diet is the best defense.\"", order: 8, candidateID: "#lucille" },
+      { title: "(9/18) \"I like when a woman has ambition. It's like seeing a dog wearing clothes.\"", order: 9, candidateID: "#jack" },
+      { title: "(10/18) \"My fingers are long and beautiful, as it has been very well documented, are various other parts of my body.\"", order: 10, candidateID: "#donald" },
+      { title: "(11/18) \"Money can't buy happiness. It is happiness.\"", order: 11, candidateID: "#jack" },
+      { title: "(12/18) \"They're everywhere. They want to save the earth, but all they do is smoke pot and smell bad.\"", order: 12, candidateID: "#cartman" },
+      { title: "(13/18) \"They had to put their cardboard box up for a second mortgage.\"", order: 13, candidateID: "#cartman" },
+      { title: "(14/18) \"The woman is on vacation with her husband as we speak. Probably having beach sex. Which is the third best sex after elevator and White House.\"", order: 14, candidateID: "#jack" },
+      { title: "(15/18) \"My IQ is one of the highest—and you all know it! Please don’t feel so stupid or insecure, it’s not your fault.\"", order: 15, candidateID: "#donald" },
+      { title: "(16/18) \"The concept of global warming was created by and for the Chinese\"", order: 16, candidateID: "#donald" },
+      { title: "(17/18) \"If that's a veiled criticism about me, I don't hear it and I won't respond to it.\"", order: 17, candidateID: "#lucille" },
+      { title: "(18/18) \"Ladies and gentlemen, I am officially running for president of the United States.\"", order: 18, candidateID: "#donald" },
     ];
   var currentQuestionIndex = 0,
   currentQuestion = questions[0]
@@ -46,6 +46,7 @@ $(document).ready(function(){
       { id: "#donald", imgSrc: "http://i.imgur.com/5v8dM2K.png" },
   ],
   topics = [
+      "We were all thinking it, but which of these fictional characters said it so eloquently?",
       "ON CLIMATE CHANGE:",
       "ON IMMIGRATION:",
       "ON CLIMATE CHANGE:",
@@ -65,42 +66,38 @@ $(document).ready(function(){
       "ON IMAGE:",
       "ON THE WHITE HOUSE:"
   ],
-  currentTopicIndex = 0;
 
-  var nextQuestion = function(e) {
-    currentQuestionIndex += 1
-    $(".questionStyle").text(currentQuestion.title);
-    currentQuestion = questions[currentQuestionIndex];
-  },
+  currentTopicIndex = 0;
+  currentQuestionIndex = 0;
+  currentTopic = topics[currentQuestionIndex];
+  currentQuestion = questions[currentQuestionIndex];
+  $(".topicStyle").text(currentTopic);
+  $(".questionStyle").text(currentQuestion.title);
+
   resetCandidates = function() {
     for (var i=0; i < candidates.length; i++) {
       $(candidates[i].id).attr("src", candidates[i].imgSrc);
     }
   },
-  nextTopic = function() {
-//     if (currentTopicIndex == 17) {
-// // currentTopicIndex hardcoded because length changes with previous function, and topic/background are then out of sync.
-//       console.log("I'm like hey whats up hello")
-//       $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
-//       currentTopicIndex += 1;
-//       currentTopic = topics[currentQuestionIndex];
-//       $(".topicStyle").text(currentTopic);
-//     } else
+  nextQuestion = function() {
     if (currentTopicIndex == topics.length - 1) {
       topics.push("OOF. YOU HAD " + incorrect + " INCORRECT GUESSES.");
       questions.push({ title: "You're a total farmer. I wanted to help; I really did. I called the concierge service with my American Express Invisible Card– there are no rental cars. The trains and buses are sold out. You're never leaving the farm."});
+      $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
       currentTopicIndex += 1;
+      currentQuestionIndex += 1;
       currentTopic = topics[currentQuestionIndex];
+      currentQuestion = questions[currentQuestionIndex];
       $(".topicStyle").text(currentTopic);
-      if (currentTopic == "OOF. YOU HAD " + incorrect + " INCORRECT GUESSES.") {
-        $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
-        console.log($(".candidate"))
-        $("#lucille").attr("src", incorrectImgSrc)
-        // for (var i = 0; i < $(".candidate").length; i++) {
-        //   $($(".candidate")[i]).attr("src", incorrectImgSrc);
-        }
+      $(".questionStyle").text(currentQuestion.title);
+      for (var i = 0; i < $(".candidate").length; i++) {
+        $($(".candidate")[i]).attr("src", incorrectImgSrc);
+      }
     } else {
       $("#money-next").remove();
+      currentQuestionIndex += 1
+      currentQuestion = questions[currentQuestionIndex];
+      $(".questionStyle").text(currentQuestion.title);
       currentTopicIndex += 1;
       currentTopic = topics[currentQuestionIndex];
       $(".topicStyle").text(currentTopic);
@@ -119,8 +116,8 @@ $(document).ready(function(){
   });
 
   $("body").on("click", ".money", function(e) {
-      nextTopic();
-      resetCandidates();
-      nextQuestion();
-    });
+    resetCandidates();
+    nextQuestion();
+  });
+
 });

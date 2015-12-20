@@ -1,10 +1,19 @@
+html{
+  background: url(http://i.ytimg.com/vi/roTHJH3_URA/maxresdefault.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "avenir";
+  color: black;
+}
+
 .quiz{
   font-family: "avenir";
   color: black;
   font-size: 4vw;
   font-weight: bold;
   padding-left: 1%;
-
 }
 
 .topicStyle{
@@ -23,16 +32,6 @@
   vertical-align: bottom;
   font-style: italic;
   padding: 1%;
-}
-
-html{
-  background: url(http://i.ytimg.com/vi/roTHJH3_URA/maxresdefault.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  font-family: "avenir";
-  color: black;
 }
 
 span{
@@ -85,15 +84,13 @@ span{
 
 .money{
   display: block;
-  min-width: 3vw;
   text-align: center;
 }
 
-#money-next image{
-  display:none;
+#money-next{
+  width:50vw;
 }
 
-#quotes{
-  background-position: bottom;
-  display: inline-block;
+#money-blank{
+  width:50vw;
 }

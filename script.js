@@ -1,6 +1,19 @@
+function swapImages() {
+  var $current = $(".money-swap input:visible");
+  var $next = $current.next();
+  if($next.length === 0) {
+    $next = $(".money-swap input:first");
+  }
+  $current.hide();
+  $next.show();
+}
+
 $(document).ready(function(){
 
+  setInterval('swapImages()', 600);
+
   var questions = [
+      { title: "", order: 0},
       { title: "(1/18) 'It's freezing and snowing in New York. We need global warming!'", order: 1, candidateID: "#donald" },
       { title: "(2/18) 'They didn't sneak into this country to be your friends.'", order: 2, candidateID: "#lucille" },
       { title: "(3/18) 'I don't have friends at NASA. Bunch of nerds.'", order: 3, candidateID: "#jack" },
@@ -47,7 +60,7 @@ $(document).ready(function(){
       "ON LIBERALS:",
       "ON FINANCE:",
       "ON THE WHITE HOUSE:",
-      "ON IMMIGRATION:",
+      "ON IMAGE:",
       "ON CLIMATE CHANGE:",
       "ON IMAGE:",
       "ON THE WHITE HOUSE:"
@@ -65,12 +78,29 @@ $(document).ready(function(){
     }
   },
   nextTopic = function() {
+//     if (currentTopicIndex == 17) {
+// // currentTopicIndex hardcoded because length changes with previous function, and topic/background are then out of sync.
+//       console.log("I'm like hey whats up hello")
+//       $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
+//       currentTopicIndex += 1;
+//       currentTopic = topics[currentQuestionIndex];
+//       $(".topicStyle").text(currentTopic);
+//     } else
     if (currentTopicIndex == topics.length - 1) {
       topics.push("OOF. YOU HAD " + incorrect + " INCORRECT GUESSES.");
       questions.push({ title: "You're a total farmer. I wanted to help; I really did. I called the concierge service with my American Express Invisible Card– there are no rental cars. The trains and buses are sold out. You're never leaving the farm."});
-    } else if (currentTopicIndex == 17 ) {
-      $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
+      currentTopicIndex += 1;
+      currentTopic = topics[currentQuestionIndex];
+      $(".topicStyle").text(currentTopic);
+      if (currentTopic == "OOF. YOU HAD " + incorrect + " INCORRECT GUESSES.") {
+        $("html").css("background", "url(https://upload.wikimedia.org/wikipedia/commons/d/d4/Misty_field,_Telemark,_Norway.jpg) no-repeat center center fixed");
+        console.log($(".candidate"))
+        $("#lucille").attr("src", incorrectImgSrc)
+        // for (var i = 0; i < $(".candidate").length; i++) {
+        //   $($(".candidate")[i]).attr("src", incorrectImgSrc);
+        }
     } else {
+      $("#money-next").remove();
       currentTopicIndex += 1;
       currentTopic = topics[currentQuestionIndex];
       $(".topicStyle").text(currentTopic);
@@ -88,13 +118,9 @@ $(document).ready(function(){
     }
   });
 
-  $("body").on("click", "#money", function(e) {
+  $("body").on("click", ".money", function(e) {
       nextTopic();
       resetCandidates();
       nextQuestion();
-    }).on("mouseenter", function() {
-      $(this).attr("src", "http://i.imgur.com/fnfNbeL.png");
-    }).on("mouseleave", function() {
-      $(this).attr("src", "http://i.imgur.com/sl6agsU.png");
     });
 });

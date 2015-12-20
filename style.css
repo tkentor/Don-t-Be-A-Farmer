@@ -37,7 +37,7 @@ html{
 
 span{
   background:rgba(218,165,32,.7);
-  border: 5px solid blanchedalmond;
+  border: 5px solid #041e42;
   color: black;
   font-weight: bold;
   font-size: 1.1vw;
@@ -66,7 +66,7 @@ span{
   display:table;
   width:100%;
   font-weight:bold;
-  color: #bf0d3e;;
+  color: white;;
 }
 
 .info:hover span{
@@ -83,12 +83,15 @@ span{
   display: block;
 }
 
-#money{
+.money{
   display: block;
   width: 45%;
   margin-left: auto;
   margin-right: auto;
+}
 
+.money-swap image{
+  display:none;
 }
 
 #quotes{

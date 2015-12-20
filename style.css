@@ -40,7 +40,7 @@ span{
   font-weight: bold;
   font-size: 1rem;
   position: absolute;
-  text-align: justify;
+  text-align: center;
   display:none;
   padding:2%;
   width: 100%;
@@ -65,7 +65,7 @@ span{
   display:table;
   width:100%;
   font-weight:bold;
-  color: white;;
+  color: #041e42;
 }
 
 .info:hover span{
